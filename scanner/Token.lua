@@ -7,7 +7,8 @@ Token.__index = Token
 _ENV = Token
 
 function Token:print()
-	write(self.type, " : ",self.count, " : ",self.jmpPos or "none", "\n")
+	local jump <const> = self.jumpPos or "none"
+	write(self.type, " : ",self.count, " : ",jump, "\n")
 	return self
 end
 
