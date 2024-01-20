@@ -10,7 +10,6 @@ Interpreter.__index = Interpreter
 _ENV = Interpreter
 
 local function printByte(i,dataPointer,cells)
-	--write(cells[dataPointer],"\n")
 	write(toChar(cells[dataPointer]))
 	return dataPointer, i + 1
 end
