@@ -1,19 +1,12 @@
 local setmetatable <const> = setmetatable
-local write <const> = io.write
 
-local Token <const> = {}
+local Token <const> = {type = "Token"}
 Token.__index = Token
 
 _ENV = Token
 
-function Token:print()
-	local jump <const> = self.jumpPos or "none"
-	write(self.type, " : ",self.count, " : ",jump, "\n")
-	return self
-end
-
-function Token:new(type,count,jumpPos)
-	return setmetatable({type = type, count = count, jumpPos = jumpPos},self)
+function Token:new(type,i,jmpPos)
+	return setmetatable({type = type,i = i, jmpPos = jmpPos},self)
 end
 
 return Token

@@ -1,11 +1,9 @@
 local Scanner <const> = require('scanner.Scanner')
+local Interpreter <const> = require('interpreter.Interpreter')
 
 local function main()
-	local text = "++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++."
-	local tokens <const> = Scanner.scanText(text)
-	for i = 1, #tokens,1 do
-		tokens[i]:print()
-	end
+	local tokens <const> = Scanner.scanText(arg[1])
+	Interpreter.interpretBF(tokens)
 end
 
 main()
